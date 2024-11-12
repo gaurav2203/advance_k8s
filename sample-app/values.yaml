@@ -38,8 +38,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
-  port: 80
+  type: NodePort
+  port: 9898
 
 ingress:
   enabled: true
@@ -48,7 +48,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: sample-app.4.186.36.74.nip.io
+    - host: sample-app.192.168.2.57.nip.io
       paths: 
         - path: /
           pathType: Prefix
@@ -56,7 +56,7 @@ ingress:
           service: 
             name: sample-app
             port: 
-              number: 80
+              number: 9898
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
