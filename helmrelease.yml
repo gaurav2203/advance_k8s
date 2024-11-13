@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: sample-app
+spec:
+  interval: 1m0s
+  chart:
+    spec:
+      chart: ./sample-app  # Update to the correct path of the Helm chart directory
+      sourceRef:
+        kind: GitRepository
+        name: advanced_k8s
